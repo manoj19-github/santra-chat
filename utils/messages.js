@@ -1,10 +1,11 @@
-const moment=require("moment")
+const moment=require("moment-timezone")
 function formatMessage(username,text){
-  const date=new Date();
+
+  const date = moment.tz(new Date(),"Asia/Kolkata");
   return{
     username,
     text,
-    time:moment(date.toISOString()).tz("Asia/Kolkata").format("DD MMM YYYY h:mm a")
+    time:date.format("DD MMM YYYY h:mm a")
   }
 }
 module.exports=formatMessage
