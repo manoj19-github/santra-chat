@@ -4,7 +4,7 @@ function formatMessage(username,text){
   return{
     username,
     text,
-    time:moment(date.toISOString()).format("DD MMM YYYY h:mm a")
+    time:moment(date.toISOString()).tz("Asia/Kolkata").format("DD MMM YYYY h:mm a")
   }
 }
 module.exports=formatMessage
